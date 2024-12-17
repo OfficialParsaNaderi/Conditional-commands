@@ -1,0 +1,56 @@
+user1 = input("do you want to register or login ? \n>>").lower()
+if user1 == "register" :
+    username = input(" Username :")
+    userpassword = input(" Password :")
+    user_info = open("file1.txt","r")
+    info_list = user_info.readlines()
+    counter = 0
+    for line in info_list :
+        if userpassword in line or username in line :
+            counter += 1
+    if counter == 2 :
+            print("you have already registered in our databases !")
+    else :
+            user_info = open("file1.txt","a")
+            user_info.write(f"Username : {username}\npassword : {userpassword}\n")
+            user_info.close()
+            print("you info have been added to our databases !")
+    if user1 != "login" :
+        user_login = input(" are you want register again ? \n<<").title()
+        if user_login == "Yes" :
+            username = input(" Username :")
+            userpassword = input(" Password :")
+            user_info= open("file1.txt","r")
+            info_list = user_info.readline()
+            for line in user_info :
+                if username in line or userpassword in line:
+                    print(f" Hello.master {username} .walcome !")
+                    number1=int(input("your fav number1 ?:"))
+                    number2=int(input("your fav number2 ?:"))
+                    number3=input("Which mathematical operation (-,+,/,*) ?:")
+                    result1=(number1)+(number2)
+                    result2=(number1)-(number2)
+                    result3=(number1)*(number2)
+                    result4=(number1)/(number2)
+                    if    number3 == ('+'):
+                        print("result :",result1)
+                    elif  number3 == ('-'):
+                        print("result :",result2)
+                    elif  number3 == ('*'):
+                        print("result :",result3)
+                    elif  number3 == ('/'):
+                        print("result :",result4)
+                    else :
+                        break
+                if user_login == " no " :
+                    break
+elif user1 == "login" :
+    username = input(" Username :")
+    userpassword = input(" Password :")
+    user_info = open("file1.txt","r")
+    info_list = user_info.readline()
+    for line in user_info:
+        if username in line or userpassword in line :
+            print(f" Welcome.master {username} !")
+        else :
+            print(" you don't have accont !")

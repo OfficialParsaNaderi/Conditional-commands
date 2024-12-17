@@ -1,0 +1,9 @@
+from os import system
+system("cls")
+score=float(input("your score ? :"))
+if score>19:
+    print("you have everythings")
+elif score<10:
+    print("youre number very bad")
+else:
+    print("you lose everythings")

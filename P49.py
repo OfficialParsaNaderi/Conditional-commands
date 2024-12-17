@@ -1,0 +1,12 @@
+def parsa():
+    user=input("<<")
+    first,math,last=user.split()
+    if math == ('+'):
+        print(f"result:{int(first)+int(last)}")
+    elif math == ('-'):
+        print(f"result:{int(first)-int(last)}")
+    elif math == ('*'):
+        print(f"result:{int(first)*int(last)}")
+    elif math == ('/'):
+        print(f"result:{int(first)/int(last)}")
+parsa()
